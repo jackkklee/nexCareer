@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.9.7.201812201020-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+	</configs>
+	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-contextrm.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-contextup.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-contextrb.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-contextlo.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-contextdo.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/appServlet/servlet-contextma.xml</config>
+		<config>src/main/webapp/WEB-INF/spring/root-context.xml</config>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

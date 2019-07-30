@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberns">
+	<resultMap type="member" id="memberResult">
+		<result property="mem_id"		 column="mem_id" />
+		<result property="mem_passwd" column="mem_passwd" />
+		<result property="mem_name" column="mem_name" />
+		<result property="mem_email" column="mem_email" />
+		<result property="mem_tel" 		 column="mem_tel" />
+		<result property="mem_addr" 	 column="mem_addr" />
+		<result property="mem_birth" 	 column="mem_birth" />
+		<result property="mem_reg_date" column="mem_reg_date" />
+		<result property="mem_update_date" 	 column="mem_update_date" />
+		<result property="mem_point"	 column="mem_point" />
+		<result property="mem_del" 		 column="mem_del" />
+		<result property="mem_vip" 		 column="mem_vip" />
+		<result property="room_num" 		 column="room_num" />
+	</resultMap>
+	<select id="select" parameterType="string" resultType="member">
+		select * from member where mem_id=#{mem_id}
+	</select>
+	<update id="update" parameterType="member">
+		update member set mem_passwd=#{mem_passwd}, mem_email=#{mem_email}, mem_tel=#{mem_tel}, mem_addr=#{mem_addr}, mem_birth=#{mem_birth}, mem_update_date=sysdate where mem_id=#{mem_id}
+	</update>
+	<update id="delete" parameterType="string">
+		update member set mem_del='y' where mem_id=#{mem_id}
+	</update>
+	<insert id="insert" parameterType="member">
+		insert into member values ( #{mem_id}, #{mem_passwd}, #{mem_name}, #{mem_email}, #{mem_tel}, #{mem_addr}, #{mem_birth}, sysdate, sysdate, 0, 'n', 'n', 'n', 0)
+	</insert>
+	<update id="charge" parameterType="member">
+		update member set mem_point=(select mem_point from member where mem_id=#{mem_id})+#{mem_point} where mem_id=#{mem_id}
+	</update>
+	<update id="down" parameterType="member">
+		update member set mem_point=(select mem_point from member where mem_id=#{mem_id})-#{mem_point} where mem_id=#{mem_id}
+	</update>
+	<update id="upload" parameterType="member">
+		update member set mem_point=(select mem_point from member where mem_id=#{mem_id})+#{mem_point} where mem_id=#{mem_id}
+	</update>
+	<select id="list" resultMap="memberResult">
+		select * from member
+	</select>
+	<select id="list2" resultMap="memberResult">
+		select * from member where mem_vip_app='y' and mem_vip='n'
+	</select>
+	<update id="vipapply" parameterType="member">
+		update member set mem_vip_app='y' where mem_id=#{mem_id}
+	</update>
+	<update id="vipaccept" parameterType="member">
+		update member set mem_vip_app='n', mem_vip='y' where mem_id=#{mem_id}
+	</update>
+	<update id="vipreject" parameterType="member">
+		update member set mem_vip_app='n', mem_vip='n' where mem_id=#{mem_id}
+	</update>
+	<update id="setRoomNum" parameterType="hashMap">
+		update member set room_num=#{num} where mem_id = #{id}
+	</update>
+	<update id="removeNum" parameterType="string">
+		update member set room_num=0 where mem_id = #{id}
+	</update>
+	<select id="selectNum" parameterType="string" resultType="int" >
+		select room_num from member where mem_id = #{id}
+	</select>
+</mapper>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config
+3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="member" type="com.ch.my.model.Member" />
+	 	<typeAlias alias="fileup" type="com.ch.my.model.FileUp"/>
+		<typeAlias alias="download" type="com.ch.my.model.Download"/>
+		<typeAlias alias="charge" type="com.ch.my.model.Charge"/>
+		<typeAlias alias="req_board" type="com.ch.my.model.Req_Board"/>
+		<typeAlias alias="manager" type="com.ch.my.model.Manager"/>
+		<typeAlias alias="room" type="com.ch.my.model.Room"/>
+		<typeAlias alias="text" type="com.ch.my.model.Text"/>
+		<typeAlias alias="board" type="com.ch.rm.model.Board" />
+		<typeAlias alias="rbd" type="com.ch.rm.model.ReplyBoard" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="fileup.xml" />
+		<mapper resource="member.xml" />
+		<mapper resource="download.xml" />
+		<mapper resource="charge.xml" />
+		<mapper resource="req_board.xml" /> 
+		<mapper resource="manager.xml" /> 
+		<mapper resource="room.xml" /> 
+		<mapper resource="text.xml" />
+		<mapper resource="board.xml" />
+		<mapper resource="rbd.xml" /> 
+	</mappers>
+</configuration>

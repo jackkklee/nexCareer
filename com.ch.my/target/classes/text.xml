@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="textns">
+	<resultMap type="text" id="textResult">
+	<result property="text_room_num"		column="text_room_num" />
+	<result property="texts"				column="texts" />
+	<result property="text_mem_id"		 	column="text_mem_id" />
+	<result property="text_date"		 	column="text_date" />
+	</resultMap>
+	<insert id="insert" parameterType="text">
+		insert into text values (#{text_room_num},#{texts},#{text_mem_id}, sysdate)
+	</insert>
+	<select id="list" resultMap="textResult">
+		select * from (select rowNum rn, a.* from (select * from text order by text_date)a)
+	</select>
+	<delete id="delete" parameterType="int">
+		delete from text where text_room_num=#{num2}
+	</delete>
+<!-- 	<update id="delete" parameterMap="int">
+		update text set texts = NULL where text_room_num = #{num}
+	</update> -->
+<!--
+	<select id="list" resultMap="roomResult">
+			select * from (select rowNum rn, a.* from (select * from room order by room_num)a) order by rn desc
+	</select>
+	<select id="maxNum" resultType = "int" >
+		select nvl(max(room_num),0)+1 from room
+	</select>
+	<insert id="insert" parameterType="room">
+		insert into room values (#{room_num},#{room_subject},#{room_people},#{room_mem_id},0)
+	</insert>
+	<update id="upCount" parameterType="int">
+		update room set people_count=people_count+1 where room_num=#{num} 
+	</update>
+	<update id="downCount" parameterType="int">
+		update room set people_count=people_count-1 where room_num=#{selectNum} 
+	</update> -->
+</mapper>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    
+<mapper namespace="com.nexmore.web.dao.EquipmentMapper">
+<!--      <resultMap type="equipmentVo" id="equipmentVo">
+		<result property="user_id" 		column="USER_ID"/>
+		<result property="equip_model" 	column="EQUIP_MODEL"/>
+		<result property="equip_serial" column="EQUIP_SERIAL"/>
+		<result property="group" 		column="GROUP"/>
+	</resultMap>  -->
+	
+	<!-- <select id="mapper에서 매핑한 함수이름" parameterType="mapper에서 가져온 파라메터타입" resultType="egovMap">
+		select MEM_ID from COM_MEM_INFO where MEMID = #{MEM_ID} and PWD = #{PWD}
+	</select> -->
+	<select id="list" resultType="equipmentVo">
+		select * from nexmore.equipment
+	</select>
+</mapper>
+
+	

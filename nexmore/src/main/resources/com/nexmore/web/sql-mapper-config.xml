@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+		<typeAlias alias="eqipInfoVo" 		type="com.nexmore.web.model.EquipInfoVo"/>
+		<typeAlias alias="equipmentVo" 		type="com.nexmore.web.model.EquipmentVo"/>
+		<typeAlias alias="profileVo" 	 	type="com.nexmore.web.model.ProfileVo"/>
+		<typeAlias alias="profileCareerVo" 	type="com.nexmore.web.model.ProfileCareerVo"/>
+		<typeAlias alias="profileLicenseVo" type="com.nexmore.web.model.ProfileLicenseVo"/>
+		<typeAlias alias="nexUserVo" 		type="com.nexmore.web.model.NexUserVo"/>
+		<typeAlias alias="nexUserInfoVo" 	type="com.nexmore.web.model.NexUserInfoVo"/>
+    </typeAliases>
+<!-- 	<mappers>
+			<mapper resource="equipInfo.xml" />
+			<mapper resource="equipment.xml" />
+			<mapper resource="profile.xml" />
+			<mapper resource="profileCareer.xml" />
+			<mapper resource="profileLicense.xml" />
+			<mapper resource="nexUser.xml" />
+			<mapper resource="nexUserInfo.xml" />
+	</mappers> -->
+</configuration>

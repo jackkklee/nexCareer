@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    
+<mapper namespace="equipInfons">
+	
+	<!-- <select id="mapper에서 매핑한 함수이름" parameterType="mapper에서 가져온 파라메터타입" resultType="egovMap">
+		select MEM_ID from COM_MEM_INFO where MEMID = #{MEM_ID} and PWD = #{PWD}
+	</select> -->
+<!-- 	<select id="iotLogin" parameterType="java.util.HashMap" resultType="iotMemberVo">
+		select * from IOT_MEMBER where trim(ID) = #{userId} AND PW = #{password}
+	</select> -->
+	<!-- select * from IOT_MEMBER where ID = #{userId} and PW = #{password} -->
+	<!-- select * from IOT_MEMBER where ID = 'nex' AND PW = '1234' -->
+</mapper>
+
+	<!-- 	select MEM_ID from COM_MEM_INFO where MEMID = #{userId} and PWD = XX1.ENC_VARCHAR2_INS(#{password},10,'PASSWD','CM_USER','PASSWORD') -->
+	
